@@ -1,12 +1,29 @@
 package com.campusdual.classroom;
 
-public class Tractor{
+public class Tractor implements IMachine {
 
-	protected int horsePower = 0;
-	
+	protected int horsePower;
+
 	public Tractor(int hp) {
 		this.horsePower = hp;
 	}
+
+
+	@Override
+	public void start() {
+		System.out.println("El tractor con " + horsePower + " caballos de fuerza está encendido.");
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("El tractor con " + horsePower + " caballos de fuerza está apagado.");
+	}
+
+	@Override
+	public void maintenance() {
+		System.out.println("El tractor con " + horsePower + " caballos de fuerza está en mantenimiento.");
+	}
+
 
 	public void forward() {
 		System.out.println("El tractor avanza");
@@ -15,5 +32,5 @@ public class Tractor{
 	public void backward() {
 		System.out.println("El tractor retrocede");
 	}
-
 }
+
